@@ -1,0 +1,12 @@
+# Hugo 生成的网站文件
+/public/
+
+# Hugo 缓存和构建资源
+/resources/_gen/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# VS Code 本地配置（可选）
+.vscode/
