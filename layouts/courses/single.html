@@ -1,0 +1,23 @@
+{{ define "content" }}
+  <section class="container course-page">
+    <p class="eyebrow">COURSE / {{ .Title }}</p>
+    <h1 class="title">{{ .Params.course }}</h1>
+    {{ with .Params.location }}<p class="course-page-location">{{ . }}</p>{{ end }}
+    <div class="course-page-intro">{{ .Content }}</div>
+
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ $entries := where $posts "Params.courses" "intersect" (slice .Title) }}
+    <section class="course-entries">
+      <h2>Work in this course</h2>
+      {{ if $entries }}
+        <ul>
+          {{ range $entries.ByDate.Reverse }}
+            <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><a href="{{ .RelPermalink }}">{{ .Title }}</a><p>{{ .Description }}</p></li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p class="empty-state">No work has been published for this course yet. New entries will appear here automatically.</p>
+      {{ end }}
+    </section>
+  </section>
+{{ end }}
