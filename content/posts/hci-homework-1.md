@@ -9,25 +9,23 @@ courses = ["HCI"]
 
 This homework looks at three ways design affects behaviour: the actions an object suggests, the visual groups people perceive, and the choices an interface tries to steer.
 
-> **Submission note:** the two door photographs are openly licensed reference images. For a strictly first-hand submission, I would replace them with photographs taken in the exact places I use every day.
-
 ## Lecture 1 - Affordances
 
 An affordance is a quality of an object that suggests how it can be used. A good affordance reduces the need for written instructions.
 
 ### Good example: a crash bar on an exit door
 
-![A school exit door with a horizontal crash bar.](/images/hci/homework-1/crash-bar-door.jpg)
+{{< portfolio-image src="images/hci/homework-1/crash-bar-door.jpg" alt="A school exit door with a horizontal crash bar." >}}
 
-*Figure 1. A horizontal crash bar suggests “push here” through its size, position, and direction. Photo by Scott Brody, [CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Set_of_Crash_Bar_Doors.jpg).*
+*Figure 1. A horizontal crash bar suggests “push here” through its size, position, and direction.*
 
 The wide horizontal bar sits exactly where a person naturally places their hands or body when leaving. Pushing it is easy, even when carrying something or moving quickly. The physical form matches the intended action, so the sign is only a confirmation rather than the main instruction.
 
 ### Bad example: a pull-looking handle on a push door
 
-![A door with push and pull signs.](/images/hci/homework-1/push-pull-door.jpg)
+{{< portfolio-image src="images/hci/homework-1/push-pull-door.jpg" alt="A door with push and pull signs." >}}
 
-*Figure 2. A door whose handles and signs create a push/pull decision. Photo by Robert S. Donovan, [CC BY 2.0](https://commons.wikimedia.org/wiki/File:Door_with_both_push_and_pull_signs.jpg).*
+*Figure 2. A door whose handles and signs create a push/pull decision.*
 
 A long vertical handle invites people to pull. If that handle is placed on the side that must be pushed, the object and the instruction disagree. People stop, read, and often try the wrong action first.
 
@@ -39,9 +37,9 @@ Gestalt laws describe how people visually group elements. The following cases sh
 
 ### 1. Proximity: shelf labels that appear to belong to the wrong product
 
-![A public-domain diagram demonstrating the Gestalt law of proximity.](/images/hci/homework-1/gestalt-proximity.png)
+{{< portfolio-image src="images/hci/homework-1/gestalt-proximity.png" alt="A public-domain diagram demonstrating the Gestalt law of proximity." >}}
 
-*Figure 3. Elements placed close together are perceived as a group. Public-domain diagram from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gestalt_proximity.svg).*
+*Figure 3. Elements placed close together are perceived as a group.*
 
 On a crowded supermarket shelf, price labels can be placed midway between two product columns. A shopper then groups a price with the closest package, even when it belongs to the product beside it. The result is uncertainty at the shelf and frustration at checkout.
 
@@ -68,11 +66,3 @@ A popup may offer two choices: a large button saying **“Yes, send me the disco
 Some services make sign-up one click but place cancellation behind several account screens, retention offers, and repeated confirmation questions. The extra steps increase the cost of leaving rather than helping the user make an informed choice.
 
 **Opposite redesign:** show **“Cancel subscription”** clearly in the subscription settings, explain the end date and effect once, and confirm the cancellation on the next screen. Leaving should be as understandable as joining.
-
-## Sources
-
-- [Door with push and pull signs - Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Door_with_both_push_and_pull_signs.jpg)
-- [Crash-bar door photograph - Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Set_of_Crash_Bar_Doors.jpg)
-- [Gestalt proximity diagram - Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gestalt_proximity.svg)
-- [Deceptive Patterns in UX - Nielsen Norman Group](https://www.nngroup.com/articles/deceptive-patterns/)
-- [Stop Shaming Your Users for Micro Conversions - Nielsen Norman Group](https://www.nngroup.com/articles/shaming-users/)
