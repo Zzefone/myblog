@@ -1,5 +1,5 @@
 baseURL = "https://zzefone.github.io/myblog/"
-title = "Zzefone · Course Portfolio"
+title = "WANG Zhaofeng · Course Portfolio"
 theme = "hugo-coder"
 locale = "en"
 defaultContentLanguage = "en"
@@ -21,7 +21,7 @@ pagerSize = 12
     unsafe = true
 
 [params]
-author = "Zzefone"
+author = "WANG Zhaofeng"
 description = "A course portfolio for Computer Graphics, AI, XR, and Human-Computer Interaction"
 keywords = "computer graphics, computer vision, AI, HCI, augmented reality, virtual reality, course portfolio"
 info = ["Master's Course Portfolio", "CG · AI · XR · HCI"]
@@ -53,7 +53,7 @@ type = "application/rss+xml"
 
 [languages.en]
 label = "English"
-title = "Zzefone · Course Portfolio"
+title = "WANG Zhaofeng · Course Portfolio"
 
 [[languages.en.menu.main]]
 name = "Courses"

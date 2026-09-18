@@ -3,7 +3,7 @@ title = "About this portfolio"
 description = "A living record of course work"
 +++
 
-This is a personal portfolio created for my Master's coursework. It documents more than final results: it keeps track of the questions, iterations, and unsuccessful experiments that shaped each project.
+This is WANG Zhaofeng's personal portfolio for Master's coursework. It documents more than final results: it keeps track of the questions, iterations, and unsuccessful experiments that shaped each project.
 
 The portfolio covers computer graphics, computer vision, artificial intelligence, human-computer interaction, and AR/VR. Each work log aims to explain the goal, method, implementation, outcome, and reflection.
 
