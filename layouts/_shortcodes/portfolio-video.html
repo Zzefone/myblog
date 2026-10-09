@@ -1,0 +1,4 @@
+<video controls playsinline preload="metadata" width="1920" height="1080" style="display:block;width:100%;height:auto;" aria-label="{{ .Get "title" }}"{{ with .Get "poster" }} poster="{{ . | relURL }}"{{ end }}>
+  <source src="{{ .Get "src" | relURL }}" type="video/mp4">
+  <a href="{{ .Get "src" | relURL }}">Download the video</a>
+</video>

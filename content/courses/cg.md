@@ -7,6 +7,6 @@ weight = 1
 
 ## Computer Graphics
 
-This page will document graphics assignments, scene experiments, and real-time rendering projects.
+Modelling, materials, lighting, and animation experiments in Blender.
 
-**Status:** waiting for the first assignment.
+**Status:** final project completed. *La Cigale et la Fourmi* is a low-poly scene with a 12-second animation, a still render, and an editable Blender project.
