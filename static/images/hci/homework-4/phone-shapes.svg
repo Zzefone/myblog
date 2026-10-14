@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 470" role="img" aria-labelledby="title desc">
+<title id="title">Phone shapes follow different uses</title><desc id="desc">A keyboard smartphone, a touchscreen slab, an unfolding screen and a possible future combination of glasses, phone and watch. Schematic, not to scale.</desc>
+<rect width="1100" height="470" fill="#f5f3ec"/>
+<g font-family="Arial,sans-serif" fill="#253d3a"><text x="36" y="42" font-size="16" letter-spacing="3">LECTURE 10 / FORM AND USE</text><text x="36" y="85" font-size="31" font-weight="bold">Where should input and screen space go?</text>
+<g fill="#fffdf6" stroke="#9aa8a0" stroke-width="3"><rect x="76" y="132" width="120" height="207" rx="16"/><rect x="325" y="132" width="118" height="207" rx="16"/><path d="M560 144Q560 136 568 139L659 157L659 339L568 322Q560 321 560 312Z"/><path d="M659 157L750 139Q758 136 758 144V312Q758 321 750 322L659 339Z"/><rect x="940" y="227" width="58" height="102" rx="8"/></g>
+<g fill="#d8ed6e" stroke="#38726b" stroke-width="2"><rect x="88" y="151" width="96" height="98" rx="4"/><rect x="337" y="151" width="94" height="166" rx="5"/></g>
+<g stroke="#9aa8a0" stroke-width="7"><path d="M89 269H183M89 287H183M89 305H183" stroke-dasharray="10 4"/></g>
+<path d="M659 158V339" stroke="#38726b" stroke-width="2" stroke-dasharray="5 5"/>
+<g fill="none" stroke="#38726b" stroke-width="3"><path d="M890 167h61l10 25h-39q-20 0-25-25zm71 25h23l10-25h61l-7 25h-64m-23-12h23"/><rect x="874" y="262" width="33" height="42" rx="8"/><path d="M889 245v17m0 42v16"/></g>
+<g font-size="20" font-weight="bold" text-anchor="middle"><text x="136" y="382">Physical keys</text><text x="384" y="382">Touchscreen</text><text x="659" y="382">Foldable screen</text><text x="963" y="382">Shared roles?</text></g>
+<g font-size="16" text-anchor="middle"><text x="136" y="409">Space for typing</text><text x="384" y="409">Flexible input surface</text><text x="659" y="409">More room when open</text><text x="963" y="409">A possible next step</text></g><text x="36" y="450" font-size="15">Schematic, not to scale. The final panel is a design proposal.</text></g></svg>

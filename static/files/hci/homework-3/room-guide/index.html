@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Room Guide · HCI prototype</title>
+  <style>
+    :root{color-scheme:light;--paper:#f5f3ec;--ink:#253d3a;--muted:#526761;--line:#b4c4bd;--lime:#d8ed6e;--white:#fffdf6}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1120px;margin:auto;padding:32px 24px}header{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:24px}.eyebrow{font:12px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;margin:0 0 9px}h1{font-size:32px;letter-spacing:-.045em;line-height:1.1;margin:0}h2{font-size:23px;line-height:1.2;letter-spacing:-.025em;margin:0 0 12px}h3{font-size:18px;margin:0 0 10px}p{margin:0 0 16px}.muted{color:var(--muted)}.badge{border:1px solid var(--line);border-radius:30px;font-size:12px;padding:7px 12px;white-space:nowrap}.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;margin-top:28px}.panel{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px}button{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);padding:11px 16px;min-height:46px}button:hover{border-color:var(--ink);background:#e9eee3}button:focus-visible,a:focus-visible{outline:3px solid #2867ba;outline-offset:3px}button:disabled{opacity:.5;cursor:default}button.primary{background:var(--lime);border-color:#a7bd4d;font-weight:650}button.primary:hover{background:#cbe355}.destinations{display:grid;gap:10px;margin:18px 0}.destination{text-align:left;width:100%;display:grid;gap:2px}.destination strong{font-size:16px}.destination span{font-size:13px;color:var(--muted)}.destination[aria-pressed=true]{border:2px solid var(--ink);padding:10px 15px;background:#eef3dd}.full{width:100%}.scene{position:relative;overflow:hidden;border-radius:12px;background:#ebe8dd;aspect-ratio:1.65}.scene svg{display:block;width:100%;height:100%}.overlay{position:absolute;left:20px;right:20px;bottom:17px;display:flex;align-items:center;gap:13px;background:var(--lime);border:1px solid #a7bd4d;border-radius:12px;padding:13px 17px;box-shadow:0 3px 10px #253d3a15}.arrow{font-size:38px;line-height:1}.overlay p{margin:0}.overlay strong{display:block;font-size:20px;line-height:1.2}.overlay small{display:block;margin-top:3px;font-size:13px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.status{border-top:1px solid var(--line);padding-top:19px;margin-top:19px}.status p{margin-bottom:8px}.recovery{background:#fff1d8;border:1px solid #c3a66f;padding:14px;border-radius:10px;margin-top:15px}.recovery p{margin-bottom:12px}.secondary-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.small{font-size:13px}.overview{margin-top:18px;border-top:1px solid var(--line);padding-top:18px}.overview svg{width:100%;height:auto;display:block}.steps{margin:8px 0 0;padding-left:22px;font-size:14px}.steps li{padding:3px 0}.steps li.current{font-weight:bold}.steps li.done{color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:20px;margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:15px}footer p{margin:0;max-width:650px}.hidden,[hidden]{display:none!important}@media(max-width:760px){main{padding:22px 16px}.layout{grid-template-columns:1fr;gap:18px}.destinations{grid-template-columns:repeat(3,minmax(0,1fr))}.destination{padding:10px;min-width:0}.destination[aria-pressed=true]{padding:9px}.destination strong{font-size:14px}.destination span{font-size:12px}.panel{padding:18px}header{align-items:start}.badge{white-space:normal;max-width:140px}.overlay{left:12px;right:12px;bottom:12px;padding:10px}.overlay strong{font-size:17px}.arrow{font-size:30px}footer{align-items:start;flex-direction:column}}@media(prefers-reduced-motion:no-preference){button{transition:background .15s}}
+  </style>
+</head>
+<body>
+<main>
+  <header><div><p class="eyebrow">HCI / Homework 3 / Lecture 8</p><h1>Room Guide</h1></div><span class="badge">Browser simulation · fictional building</span></header>
+  <div class="layout">
+    <aside class="panel" aria-label="Destination selection">
+      <p class="eyebrow">01 / Choose a room</p><h2>Where are you going?</h2><p class="muted small">Start at the entrance. Try a route, then explore the controls.</p>
+      <div class="destinations">
+        <button class="destination" data-destination="hci" aria-pressed="false"><strong>HCI Studio</strong><span>Room H201 · Floor 1</span></button>
+        <button class="destination" data-destination="library" aria-pressed="false"><strong>Library</strong><span>Room L104 · Floor 1</span></button>
+        <button class="destination" data-destination="desk" aria-pressed="false"><strong>Student Desk</strong><span>Room S101 · Floor 1</span></button>
+      </div>
+      <button id="start" class="primary full" disabled>Start route</button>
+      <div class="status"><p class="small"><strong>How to try it</strong></p><p class="muted small">Use “Next location” to simulate movement. The scene doesn't use a camera or measure your position.</p><p id="selection-note" class="small muted">Select a destination to begin.</p></div>
+    </aside>
+    <section class="panel" aria-label="Navigation view">
+      <p class="eyebrow" id="view-label">02 / Navigation view</p><h2 id="view-heading" tabindex="-1">Ready at the entrance</h2>
+      <div class="scene">
+        <svg viewBox="0 0 660 400" role="img" aria-label="Schematic indoor corridor with doors, a noticeboard and a blue sign. This is not a live view.">
+          <rect width="660" height="400" fill="#f3f0e5"/><path d="M0 0L225 138H435L660 0" fill="#e1ddd0"/><path d="M0 400L225 242H435L660 400" fill="#cec9b9"/>
+          <path d="M0 0L225 138V242L0 400" fill="#e7e3d7"/><path d="M660 0L435 138V242L660 400" fill="#eae6db"/>
+          <path d="M225 138H435V242H225Z" fill="#fbf9f2" stroke="#a4ada1" stroke-width="2"/>
+          <path d="M60 95L140 129V291L60 349Z" fill="#bcc6bd" stroke="#7e8d82" stroke-width="2"/><path d="M520 129L600 95V349L520 291Z" fill="#bcc6bd" stroke="#7e8d82" stroke-width="2"/>
+          <path d="M165 147L201 160V230L165 252Z" fill="#e1cb9a" stroke="#a89b77" stroke-width="2"/><path d="M177 164L190 169M177 180L190 184M177 196L190 199" stroke="#a89b77" stroke-width="3"/>
+          <rect x="280" y="149" width="100" height="29" rx="3" fill="#376783"/><text x="330" y="169" font-family="Arial,sans-serif" font-size="13" fill="#fff" text-anchor="middle">ROOMS →</text>
+          <path d="M225 242L135 400M435 242L525 400" stroke="#b9b5a7" stroke-width="2"/>
+        </svg>
+        <div class="overlay"><span class="arrow" id="direction-symbol" aria-hidden="true">◎</span><p><strong id="direction-text">Choose a destination</strong><small id="direction-detail">The next instruction will appear here.</small></p></div>
+      </div>
+      <div class="status" aria-live="polite" aria-atomic="true"><p id="route-progress">No route started.</p><p id="landmark" class="muted small">Three short, simulated routes are available.</p></div>
+      <div id="recovery" class="recovery" hidden><h3>Missed turn</h3><p id="recovery-text">Stop and return to the last landmark.</p><button id="recover" class="primary">Back at last location</button></div>
+      <div class="controls"><button id="next" class="primary" hidden>Next location</button><button id="overview-toggle" aria-expanded="false" aria-controls="overview" disabled>Overview</button><button id="stop" hidden>Stop route</button><button id="another" class="primary" hidden>Choose another room</button></div>
+      <div class="secondary-controls"><button id="miss" class="small" hidden>Simulate missed turn</button></div>
+      <section id="overview" class="overview" hidden><h3>Route overview</h3><p class="muted small">Schematic only · all rooms on the same fictional floor</p>
+        <svg viewBox="0 0 600 220" role="img" aria-label="Fictional floor plan. Entrance is at the bottom, Library is left of the junction, Student Desk is ahead and HCI Studio is to the right.">
+          <g fill="#f0eee4" stroke="#9aaa9c" stroke-width="2"><rect x="215" y="145" width="150" height="60" rx="6"/><rect x="30" y="57" width="145" height="60" rx="6"/><rect x="215" y="5" width="150" height="57" rx="6"/><rect x="420" y="57" width="150" height="60" rx="6"/></g>
+          <path d="M290 145V88M175 88H420M290 88V62" stroke="#b4c4bd" stroke-width="17" fill="none"/><path id="map-route" d="" stroke="#38726b" stroke-width="7" fill="none" stroke-linejoin="round"/>
+          <g font-family="Arial,sans-serif" font-size="15" fill="#253d3a" text-anchor="middle"><text x="290" y="181">Entrance</text><text x="103" y="93">Library</text><text x="290" y="39">Student Desk</text><text x="495" y="93">HCI Studio</text><text x="297" y="128" text-anchor="start" font-size="12">Noticeboard</text></g>
+          <circle id="map-location" cx="290" cy="136" r="8" fill="#253d3a" stroke="#d8ed6e" stroke-width="3"><title>Current simulated location</title></circle>
+        </svg><p class="muted small" id="map-legend">Dot = simulated location on the route.</p><ol id="step-list" class="steps"></ol>
+      </section>
+    </section>
+  </div>
+  <footer><p class="muted small">A low-fidelity navigation concept by WANG Zhaofeng. Clicks advance a scripted route; they do not represent measured walking or live AR tracking.</p><button id="export" class="small">Save this session (.json)</button></footer>
+</main>
+<script>
+(() => {
+  'use strict';
+  const routes = {
+    hci: {name:'HCI Studio',room:'H201',map:'M290 145V88H420',points:[[290,136],[290,88],[365,88],[410,88]],steps:[
+      {symbol:'↑',instruction:'Go straight',distance:'35 m remaining',landmark:'Follow the main corridor to the noticeboard.'},
+      {symbol:'→',instruction:'Turn right',distance:'15 m remaining',landmark:'At the noticeboard, follow the blue rooms sign.'},
+      {symbol:'←',instruction:'Look for H201 on your left',distance:'5 m remaining',landmark:'The room label is beside the first door.'},
+      {symbol:'✓',instruction:'You have arrived',distance:'HCI Studio · H201',landmark:'Check the room label before entering.'}]},
+    library: {name:'Library',room:'L104',map:'M290 145V88H175',points:[[290,136],[290,88],[180,88]],steps:[
+      {symbol:'↑',instruction:'Go straight',distance:'30 m remaining',landmark:'Follow the main corridor to the noticeboard.'},
+      {symbol:'←',instruction:'Turn left',distance:'10 m remaining',landmark:'The library is at the end of the left corridor.'},
+      {symbol:'✓',instruction:'You have arrived',distance:'Library · L104',landmark:'The entrance is marked Library.'}]},
+    desk: {name:'Student Desk',room:'S101',map:'M290 145V62',points:[[290,136],[290,88],[290,65]],steps:[
+      {symbol:'↑',instruction:'Go straight',distance:'25 m remaining',landmark:'Follow the main corridor to the noticeboard.'},
+      {symbol:'↑',instruction:'Continue past the noticeboard',distance:'5 m remaining',landmark:'Look for the Student Desk directly ahead.'},
+      {symbol:'✓',instruction:'You have arrived',distance:'Student Desk · S101',landmark:'The desk is inside the room marked S101.'}]}
+  };
+  const el = Object.fromEntries(['start','selection-note','view-heading','direction-symbol','direction-text','direction-detail','route-progress','landmark','recovery','recovery-text','recover','next','overview-toggle','overview','stop','another','miss','map-route','map-location','map-legend','step-list','export'].map(id => [id,document.getElementById(id)]));
+  let selected = null, active = false, stepIndex = 0, missed = false, overview = false;
+  const session = {prototype:'Room Guide v1',createdAt:new Date().toISOString(),events:[]};
+  const record = action => session.events.push({action,destination:selected,locationIndex:active?stepIndex:null,time:new Date().toISOString(),elapsedMs:Math.round(performance.now())});
+  function render() {
+    const route=selected&&routes[selected], arrived=active&&stepIndex===route.steps.length-1;
+    document.querySelectorAll('[data-destination]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.destination===selected));button.disabled=active});
+    el.start.disabled=!selected||active;
+    el['selection-note'].textContent=active?'Route running. Stop it to change destination.':route?route.name+' selected.':'Select a destination to begin.';
+    el.next.hidden=!active||arrived||missed;
+    el.stop.hidden=!active;
+    el.another.hidden=!arrived;
+    el.miss.hidden=!active||arrived||missed;
+    el.recovery.hidden=!missed;
+    el['overview-toggle'].disabled=!active;
+    el['overview-toggle'].setAttribute('aria-expanded',String(overview&&active));
+    el.overview.hidden=!overview||!active;
+    el['overview-toggle'].textContent=overview&&active?'Hide overview':'Overview';
+    if(!active){
+      el['view-heading'].textContent='Ready at the entrance';el['direction-symbol'].textContent='◎';el['direction-text'].textContent=route?'Ready for '+route.name:'Choose a destination';el['direction-detail'].textContent='The next instruction will appear here.';el['route-progress'].textContent='No route started.';el.landmark.textContent='Three short, simulated routes are available.';
+    } else {
+      const step=route.steps[stepIndex];
+      el['view-heading'].textContent=route.name+' · '+route.room;
+      el['direction-symbol'].textContent=missed?'↶':step.symbol;
+      el['direction-text'].textContent=missed?'Return to the last location':step.instruction;
+      el['direction-detail'].textContent=missed?'Guidance paused · no position is being measured':step.distance;
+      el['route-progress'].textContent=arrived?'Route complete · '+route.name:'Location '+(stepIndex+1)+' of '+route.steps.length+' · '+route.name;
+      el.landmark.textContent=missed?'Use the last landmark to recover before continuing.':step.landmark;
+      el['recovery-text'].textContent='Return to the last location, then continue: '+step.landmark;
+      el['map-route'].setAttribute('d',route.map);
+      el['map-location'].setAttribute('cx',route.points[stepIndex][0]);
+      el['map-location'].setAttribute('cy',route.points[stepIndex][1]);
+      el['map-legend'].textContent=missed?'Dot = last confirmed location. Recover before continuing.':'Dot = simulated location on the route.';
+      el['step-list'].replaceChildren(...route.steps.map((s,i)=>{const item=document.createElement('li');item.textContent=s.instruction;item.className=i===stepIndex?'current':i<stepIndex?'done':'';if(i===stepIndex)item.setAttribute('aria-current','step');return item;}));
+    }
+  }
+  function stop(){record('stop');active=false;missed=false;overview=false;stepIndex=0;render();el.start.focus();}
+  document.querySelectorAll('[data-destination]').forEach(button=>button.addEventListener('click',()=>{selected=button.dataset.destination;record('select');render();}));
+  el.start.addEventListener('click',()=>{if(!selected||active)return;active=true;stepIndex=0;missed=false;overview=false;record('start');render();el['view-heading'].focus();});
+  el.next.addEventListener('click',()=>{if(!active||missed)return;stepIndex=Math.min(stepIndex+1,routes[selected].steps.length-1);record(stepIndex===routes[selected].steps.length-1?'arrive':'next');render();if(el.next.hidden)el.another.focus();});
+  el['overview-toggle'].addEventListener('click',()=>{overview=!overview;record(overview?'overview-open':'overview-close');render();});
+  el.miss.addEventListener('click',()=>{missed=true;record('missed-turn');render();el.recover.focus();});
+  el.recover.addEventListener('click',()=>{missed=false;record('recover');render();el.next.focus();});
+  el.stop.addEventListener('click',stop);el.another.addEventListener('click',stop);
+  el.export.addEventListener('click',()=>{record('export');const blob=new Blob([JSON.stringify(session,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='room-guide-session.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+  render();
+})();
+</script>
+</body>
+</html>

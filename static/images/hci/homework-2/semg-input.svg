@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+<title id="title">From movement to a digital command</title><desc id="desc">A conceptual sEMG input pipeline. The sensor measures muscle activity and a decoder identifies a command. This does not depict an actual product.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#38726b" stroke-width="1.5"/></marker></defs>
+<rect width="1000" height="390" fill="#f5f3ec"/>
+<g font-family="Arial,sans-serif" fill="#253d3a"><text x="42" y="50" font-size="16" letter-spacing="3">LECTURE 6 / INPUT CONCEPT</text><text x="42" y="92" font-size="30" font-weight="bold">Small movement. A readable signal.</text>
+<g fill="#fffdf6" stroke="#b4c4bd" stroke-width="2"><rect x="42" y="140" width="195" height="150" rx="15"/><rect x="278" y="140" width="195" height="150" rx="15"/><rect x="514" y="140" width="195" height="150" rx="15"/><rect x="750" y="140" width="208" height="150" rx="15"/></g>
+<g fill="none" stroke="#38726b" stroke-width="3" marker-end="url(#arrow)"><path d="M244 215H267"/><path d="M480 215H503"/><path d="M716 215H739"/></g>
+<g font-size="20" font-weight="bold"><text x="62" y="178">Hand action</text><text x="298" y="178">sEMG sensor</text><text x="534" y="178">Decoder</text><text x="770" y="178">Command</text></g>
+<g font-size="17"><text x="62" y="216">A deliberate pinch</text><text x="62" y="244">or wrist movement</text><text x="298" y="216">Measures muscle</text><text x="298" y="244">electrical activity</text><text x="534" y="216">Recognises a</text><text x="534" y="244">trained pattern</text><text x="770" y="216">Select / scroll /</text><text x="770" y="244">enter text</text></g>
+<text x="42" y="340" font-size="17">Schematic only. Signal measurement (EMG) differs from muscle stimulation (EMS).</text></g></svg>
