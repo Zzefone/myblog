@@ -1,0 +1,7 @@
+utc,session,turn,participant,condition,mode,model,ttft_ms,total_ms,status,http_status,finish_reason
+"2026-10-16T16:09:02.2628908Z","a202399ef05f","2bc5b51ce3734eab8747c6cd87a6a49c","AUTO","A_indicator_off","deepseek","deepseek-flash","1130.713","1475.565","ok","200","stop"
+"2026-10-16T16:09:04.3951457Z","a202399ef05f","935c955e717e466b80ab51271468cce5","AUTO","A_indicator_off","deepseek","deepseek-flash","1719.827","2038.080","ok","200","stop"
+"2026-10-16T16:09:06.5462624Z","a202399ef05f","b511c3cb39c140938be11a17c0710648","AUTO","A_indicator_off","deepseek","deepseek-flash","1480.100","2109.378","ok","200","stop"
+"2026-10-16T16:09:08.7738988Z","a202399ef05f","6984f14599da4d11950df27f091801e6","AUTO","B_indicator_on","deepseek","deepseek-flash","1665.601","2184.835","ok","200","stop"
+"2026-10-16T16:09:12.6529957Z","a202399ef05f","597a532ae6f749bb84ee5b6b0c2e8b70","AUTO","B_indicator_on","deepseek","deepseek-flash","3649.470","3838.883","ok","200","stop"
+"2026-10-16T16:09:14.3969159Z","a202399ef05f","b984433f69e14da7a96d46ccfd8bf557","AUTO","B_indicator_on","deepseek","deepseek-flash","1195.909","1701.503","ok","200","stop"

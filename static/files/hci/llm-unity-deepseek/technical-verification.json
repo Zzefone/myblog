@@ -1,0 +1,52 @@
+{
+  "verification_date": "2026-10-16",
+  "unity_version": "6000.0.23f1",
+  "model": "deepseek-flash",
+  "thinking": "disabled",
+  "max_tokens": 256,
+  "python_unit_tests_passed": 9,
+  "stream_parser_checks": {
+    "passed": true,
+    "checks": 10,
+    "uses_api": false
+  },
+  "runtime_mock": {
+    "passed": true,
+    "input_lock": true,
+    "condition_a": true,
+    "condition_b": true,
+    "indicator": true,
+    "failure_recovery": true,
+    "auto_scroll": true,
+    "history": true,
+    "service": "scripted mock, not DeepSeek"
+  },
+  "runtime_live": {
+    "passed": true,
+    "completed_api_turns": 6,
+    "human_participants": 0,
+    "ratings_collected": 0,
+    "mode": "deepseek"
+  },
+  "api_turns": 6,
+  "human_participants": 0,
+  "human_ratings": 0,
+  "latency_scope": "Client-visible first answer-content delta; includes Unity, local relay, network and provider.",
+  "conditions": {
+    "A_indicator_off": {
+      "turns": 3,
+      "median_ttft_ms": 1480.1,
+      "median_total_ms": 2038.08,
+      "min_ttft_ms": 1130.713,
+      "max_ttft_ms": 1719.827
+    },
+    "B_indicator_on": {
+      "turns": 3,
+      "median_ttft_ms": 1665.601,
+      "median_total_ms": 2184.835,
+      "min_ttft_ms": 1195.909,
+      "max_ttft_ms": 3649.47
+    }
+  },
+  "player_sha256": "d6cdbd0151a737ee147ec50121d0321c20e79380e33de11b40e9271d327ce580"
+}
