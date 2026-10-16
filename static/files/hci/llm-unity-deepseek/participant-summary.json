@@ -1,0 +1,45 @@
+{
+  "study_date": "2026-10-16",
+  "completed_turns": 3,
+  "matched_ratings": 3,
+  "distinct_recorded_ids": 1,
+  "paired_ab_participants": 0,
+  "condition": "B_indicator_on",
+  "mode": "deepseek",
+  "model": "deepseek-flash",
+  "median_first_text_seconds": 0.93581,
+  "median_total_seconds": 1.287045,
+  "median_perceived_first_text_wait_seconds": 5.0,
+  "median_satisfaction_1_to_7": 6.0,
+  "turns": [
+    {
+      "turn_number": 1,
+      "condition": "B_indicator_on",
+      "first_text_seconds": 1.02603,
+      "total_seconds": 1.311445,
+      "perceived_first_text_wait_seconds": 4.0,
+      "satisfaction_1_to_7": 7.0
+    },
+    {
+      "turn_number": 2,
+      "condition": "B_indicator_on",
+      "first_text_seconds": 0.862408,
+      "total_seconds": 1.07501,
+      "perceived_first_text_wait_seconds": 10.0,
+      "satisfaction_1_to_7": 6.0
+    },
+    {
+      "turn_number": 3,
+      "condition": "B_indicator_on",
+      "first_text_seconds": 0.93581,
+      "total_seconds": 1.287045,
+      "perceived_first_text_wait_seconds": 5.0,
+      "satisfaction_1_to_7": 1.0
+    }
+  ],
+  "participant_count_note": "The user confirmed that multiple participants shared P01. Exact participant count and person-to-turn mapping were not provided.",
+  "qualitative_comments": "No written comments were found with these logs, and no verbal comment text was supplied.",
+  "limits": "Three B-only turns. No A condition, paired comparison, written explanations or causal effect estimate. Raw session/turn IDs and UTC timestamps are omitted from this summary.",
+  "participant_id_reused": true,
+  "physical_participant_count": null
+}
