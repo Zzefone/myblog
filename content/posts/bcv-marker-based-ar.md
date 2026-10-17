@@ -1,15 +1,15 @@
 +++
 title = "Planar AR: matching a marker and replacing it"
 date = 2026-10-17
-description = "A SIFT and ORB implementation with an interactive GUI. Synthetic tests are complete; phone-to-webcam validation is still pending."
-draft = true
+description = "SIFT and ORB planar augmentation, tested on generated scenes and a phone in front of the webcam. Dimming and partial views expose the limits."
+draft = false
 tags = ["BCV", "augmented reality", "OpenCV", "feature matching", "Python"]
 categories = ["BCV"]
 courses = ["BCV"]
-source_files = ["BCV/final_project/VAR-BSC-Final-Project-2026.pdf", "BCV/final_project/ar_core.py", "BCV/final_project/ar_app.py", "BCV/final_project/output/synthetic_summary.csv", "BCV/final_project/output/evaluation_metadata.json"]
+source_files = ["BCV/final_project/VAR-BSC-Final-Project-2026.pdf", "BCV/final_project/ar_core.py", "BCV/final_project/ar_app.py", "BCV/final_project/output/synthetic_summary.csv", "BCV/final_project/output/evaluation_metadata.json", "BCV/final_project/output/webcam_replay_summary.csv", "BCV/final_project/output/webcam_metadata.json"]
 +++
 
-A reference image, a camera frame and a replacement image. The BCV final project is to find the first image in the frame and put the replacement in the same position. The program and synthetic tests are ready. Testing the marker on a phone in front of the webcam is still pending.
+A reference image, a camera frame and a replacement image. The BCV final project is to find the first image in the frame and put the replacement in the same position. I tested the code on generated scenes, then on the marker displayed on a phone in front of the integrated webcam.
 
 ## The matching pipeline
 
@@ -35,14 +35,41 @@ The strong perspective case separates the estimates more clearly: mean corner er
 
 The 25% and 50% occlusions hide part of the reference image in its own plane. They test whether enough features remain for detection. The rendered replacement still covers the full estimated rectangle, including the occluded area. There is no foreground-hand model.
 
-## Interface and the remaining test
+## A phone in front of the webcam
+
+{{< portfolio-image src="images/bcv/marker-ar/real-phone-comparison.png" alt="Real phone marker captured by the webcam and its replacement, with the surrounding camera image removed for privacy." >}}
+
+The first frontal run accepted all 203 frames over 12.5 seconds. That was encouraging, but a longer guided sequence exposed more failures. Tilt, rotation, reduced screen brightness, partial covering and a different background. The final step was to remove the phone.
+
+For a fairer descriptor comparison, both methods processed the same MJPG-decoded frames, sampled every fourth frame. The counts below mean that alignment passed the checks; they are not measured detection accuracy.
+
+| Guided condition | SIFT accepted | ORB accepted |
+| --- | --- | --- |
+| Frontal | 23/23 | 22/23 |
+| Tilt | 20/22 | 14/22 |
+| Rotation | 21/23 | 8/23 |
+| Dim screen | 3/29 | 0/29 |
+| Partial cover, first step | 14/26 | 0/26 |
+| Partial cover, second step | 23/23 | 0/23 |
+| Changed background | 19/24 | 3/24 |
+| Phone absent, reviewed segment | 0/21 | 0/21 |
+
+SIFT held up better in this recording. ORB was faster in this replay: condition medians were roughly 31-62 ms per sampled frame, compared with about 80-159 ms for SIFT. These are single-pass measurements, excluding drawing and display; they aren't a controlled speed benchmark.
+
+{{< portfolio-image src="images/bcv/marker-ar/real-phone-conditions.png" alt="Camera views of a phone marker under rotation, dimming and hand covering beside the corresponding replacement results; background pixels are removed." >}}
+
+Dimming was the clearest failure. The two covering steps aren't a controlled comparison of percentages: hand position, distance and focus also changed. The better second result doesn't mean that more occlusion helps.
+
+The nominal absence step initially still contained the phone moving away. I checked that transition before treating it as a negative test. The later, reviewed no-phone segment is counted separately in the result files. Raw frames and the room background stay local; the images here retain only the estimated marker region. Example snapshots were selected for visible matches, while the table includes every sampled frame.
+
+## The interface
 
 {{< portfolio-image src="images/bcv/marker-ar/gui-synthetic-demo.jpg" alt="Actual AR application GUI playing a labelled synthetic video, with parameter controls and three result views." >}}
 
 The interface accepts a camera or video file. It shows the outline or keypoints, the replacement and the filtered matches. Capture runs in a separate process, which makes a stalled virtual camera easier to stop.
 
-The GUI has been run and inspected with the generated demo. The integrated camera can return frames. Neither check establishes that a phone-displayed marker is tracked reliably.
+This screenshot shows the generated demo; the phone examples above are the real camera test. The interface and test recorder use the same matching code.
 
-The next tests need the marker on an actual phone screen: front view, tilt, rotation, changes in brightness, partial covering and a cluttered background. Reflections, focus and motion blur are still open questions. The article remains a draft until there is real marker evidence.
+There is no temporal tracking or smoothing. A bad frame simply loses its overlay, and a foreground hand is covered by the replacement. Low light, reflections and blurred or small markers remain the main limits of this version.
 
-[Reference marker](https://zzefone.github.io/myblog/images/bcv/marker-ar/marker.png) · [Source bundle](https://zzefone.github.io/myblog/files/bcv/marker-ar/Planar_AR_Project.zip)
+[Reference marker](https://zzefone.github.io/myblog/images/bcv/marker-ar/marker.png) · [Short report](https://zzefone.github.io/myblog/files/bcv/marker-ar/Project_Report.pdf) · [Source bundle](https://zzefone.github.io/myblog/files/bcv/marker-ar/Planar_AR_Project.zip)

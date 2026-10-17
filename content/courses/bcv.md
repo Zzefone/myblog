@@ -9,4 +9,4 @@ weight = 2
 
 This page will collect work on image processing, feature extraction, matching, and visual geometry.
 
-**Status:** edge detection lab completed. The final project's planar AR implementation and synthetic tests are ready; phone-to-webcam marker validation is still pending.
+**Status:** edge detection lab and marker-based AR final project completed. The AR program includes an interactive GUI, synthetic tests and a real phone-to-webcam comparison of SIFT and ORB, including observed failures under dimming and partial views.
