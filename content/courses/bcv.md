@@ -9,4 +9,4 @@ weight = 2
 
 This page will collect work on image processing, feature extraction, matching, and visual geometry.
 
-**Status:** edge detection lab completed. Gradient and Laplacian results are compared on photographs, with a tiger example showing the limits of edge-based segmentation.
+**Status:** edge detection lab completed. The final project's planar AR implementation and synthetic tests are ready; phone-to-webcam marker validation is still pending.
