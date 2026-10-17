@@ -1,6 +1,7 @@
 +++
 title = "HCI Lab 1b: Unity Setup with an Existing Project"
 date = 2026-10-14
+lastmod = 2026-10-16
 description = "Reusing the Corebound Unity project to document the environment, scenes, runtime evidence, and a UI readability fix."
 tags = ["HCI", "Unity", "lab", "interface"]
 categories = ["HCI"]
@@ -9,6 +10,8 @@ source_files = ["HCI/Human Computer Interaction/Lecture_homework/HW1.pdf", "HCI/
 +++
 
 Unity was already working for my Computer Graphics project, Corebound. For this lab, I am documenting that existing environment and its recorded results instead of creating another empty project. The screenshots below come from the Windows player run on 11 October 2026.
+
+The separate [ML-Agents lab]({{< relref "hci-lab-1-ml-agents.md" >}}) adds trained reaching and chasing policies. This page remains the basic Unity setup record.
 
 ## Environment and project structure
 
