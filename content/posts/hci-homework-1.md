@@ -1,6 +1,6 @@
 +++
 title = "HCI Homework 1: Affordances, Gestalt Laws, and Dark Patterns"
-date = 2026-09-18
+date = 2026-09-26
 lastmod = 2026-10-14
 description = "Door affordances, two Gestalt problems in forms, and two dark patterns with simpler alternatives."
 tags = ["HCI", "affordance", "gestalt", "dark patterns"]

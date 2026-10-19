@@ -1,6 +1,6 @@
 +++
 title = "HCI Homework 3: An AR Guide for Finding a Room"
-date = 2026-10-14
+date = 2026-10-04
 draft = false
 description = "Three AR ideas, an indoor navigation prototype, and feedback from three people trying its routes."
 tags = ["HCI", "AR", "prototyping", "user evaluation"]

@@ -1,6 +1,6 @@
 +++
 title = "HCI Homework 4: Phone Shapes and Everyday MR"
-date = 2026-10-14
+date = 2026-10-08
 description = "Why phones change shape, what remains of Weiser's vision, and three everyday MR app concepts."
 tags = ["HCI", "ubiquitous computing", "MR", "mobile interfaces"]
 categories = ["HCI"]

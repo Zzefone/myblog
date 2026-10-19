@@ -1,6 +1,6 @@
 +++
 title = "HCI Homework 2: Body Interfaces and the Ultimate Display"
-date = 2026-10-14
+date = 2026-09-30
 description = "Pedro Lopes's research, Sutherland's display vision, and a wristband that reads muscle activity."
 tags = ["HCI", "haptics", "input devices", "sEMG"]
 categories = ["HCI"]

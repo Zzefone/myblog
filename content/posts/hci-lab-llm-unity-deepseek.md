@@ -1,7 +1,7 @@
 +++
 title = "HCI Lab: Streaming Chat in Unity with the DeepSeek API"
-date = 2026-10-16
-lastmod = 2026-10-16
+date = 2026-10-19
+lastmod = 2026-10-19
 description = "A Unity chat client using DeepSeek, with measured streaming latency and three rated turns from an informal participant pilot."
 tags = ["HCI", "Unity", "DeepSeek", "LLM", "latency", "evaluation"]
 categories = ["HCI"]

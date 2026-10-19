@@ -1,6 +1,6 @@
 +++
 title = "HCI Lab 1b: Unity Setup with an Existing Project"
-date = 2026-10-14
+date = 2026-09-22
 lastmod = 2026-10-16
 description = "Reusing the Corebound Unity project to document the environment, scenes, runtime evidence, and a UI readability fix."
 tags = ["HCI", "Unity", "lab", "interface"]

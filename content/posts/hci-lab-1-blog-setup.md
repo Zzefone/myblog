@@ -1,6 +1,6 @@
 +++
 title = "HCI Lab 1a: Setting Up the Course Blog"
-date = 2026-10-14
+date = 2026-09-18
 description = "A Hugo Extended course portfolio, GitHub Pages publishing, and the image-path problem after deployment."
 tags = ["HCI", "Hugo", "blog", "GitHub Pages"]
 categories = ["HCI"]
