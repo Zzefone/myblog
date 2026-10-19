@@ -1,0 +1,189 @@
+{
+  "experiment_date": "2026-10-19",
+  "dataset": "NeRF Synthetic Hotdog (CC0), supplied poses",
+  "own_photo_capture": false,
+  "colmap_run": false,
+  "train_views": 100,
+  "validation_views": 10,
+  "resolution": [
+    400,
+    400
+  ],
+  "brush_version": "v0.3.0",
+  "training_backend": "Vulkan",
+  "seed": 20261019,
+  "steps": 3000,
+  "process_wall_seconds": 38.944,
+  "validation": [
+    {
+      "step": 1000,
+      "psnr_db": 23.608936,
+      "ssim": 0.8682354
+    },
+    {
+      "step": 2000,
+      "psnr_db": 28.688244,
+      "ssim": 0.94056
+    },
+    {
+      "step": 3000,
+      "psnr_db": 30.395605,
+      "ssim": 0.9542484
+    }
+  ],
+  "independent_saved_render_check": {
+    "held_out_images": 10,
+    "independent_mean_psnr_db": 30.395844916212223,
+    "metric": "RGB, black-alpha composite, 8-bit saved Brush render, per-image PSNR then mean",
+    "images": [
+      {
+        "image": "r_0.png",
+        "mse": 0.0004630125913110342,
+        "psnr_db": 33.34407198479784
+      },
+      {
+        "image": "r_10.png",
+        "mse": 0.0005024275919518134,
+        "psnr_db": 32.9892651834854
+      },
+      {
+        "image": "r_20.png",
+        "mse": 0.00045892086377034467,
+        "psnr_db": 33.3826219766738
+      },
+      {
+        "image": "r_30.png",
+        "mse": 0.00139831814686659,
+        "psnr_db": 28.543940061946486
+      },
+      {
+        "image": "r_40.png",
+        "mse": 0.0023798685441496856,
+        "psnr_db": 26.234470312321942
+      },
+      {
+        "image": "r_50.png",
+        "mse": 0.000766792163270537,
+        "psnr_db": 31.153223343252137
+      },
+      {
+        "image": "r_60.png",
+        "mse": 0.001123261886453928,
+        "psnr_db": 29.495189769690462
+      },
+      {
+        "image": "r_70.png",
+        "mse": 0.0014384609765474817,
+        "psnr_db": 28.421019154211873
+      },
+      {
+        "image": "r_80.png",
+        "mse": 0.0021541221645520955,
+        "psnr_db": 26.667296706358123
+      },
+      {
+        "image": "r_90.png",
+        "mse": 0.00042390148019992314,
+        "psnr_db": 33.727350669384165
+      }
+    ]
+  },
+  "cleanup": {
+    "raw_splats": 9020,
+    "filtered_splats": 8820,
+    "removed_splats": 200,
+    "low_opacity_splats": 199,
+    "distant_splats": 3,
+    "overlap": 2,
+    "opacity_minimum": 0.01,
+    "radius_maximum_scene_units": 2.0,
+    "radius_center": [
+      0.13410040736198425,
+      -0.10115839540958405,
+      0.03026873990893364
+    ],
+    "note": "Chosen experiment thresholds, not a general optimum. Removal is not proof of a quality improvement.",
+    "models": {
+      "hotdog_clean.ply": {
+        "bytes": 2083069,
+        "sha256": "59560d0c649aa2b1d6939c07b072d71b04c882e8f9d83956da2071761e35bf9a"
+      },
+      "hotdog_raw.ply": {
+        "bytes": 2130269,
+        "sha256": "72754a6dffe23438f01e8665f92e7164d0c2ddc615d45a131f19559a51edf8b1"
+      }
+    }
+  },
+  "unity_import": {
+    "raw_splats": 9020,
+    "cleaned_splats": 8820,
+    "graphics_api": "Direct3D12",
+    "asset_quality": "Medium",
+    "unity": "6000.0.23f1"
+  },
+  "runtime": {
+    "passed": true,
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "graphics_api": "Direct3D12",
+    "captures": [
+      {
+        "view": 0,
+        "filtered": false,
+        "splats": 9020,
+        "file": "view-0-raw.png",
+        "nonblack_fraction": 0.286095,
+        "sha256": "210c806d7fa286103eb2e14ac796218b0b4b09203625ba7e5c7265ea39417f14"
+      },
+      {
+        "view": 0,
+        "filtered": true,
+        "splats": 8820,
+        "file": "view-0-filtered.png",
+        "nonblack_fraction": 0.286142,
+        "sha256": "ffda557998b04345d3dda505ed121359fd9f0c06957e80df1a8d9116fb37140b"
+      },
+      {
+        "view": 1,
+        "filtered": false,
+        "splats": 9020,
+        "file": "view-1-raw.png",
+        "nonblack_fraction": 0.149147,
+        "sha256": "4b4a2cee65936559c438c51156ce3dc5dd297c6f6992600778c9e0e4b6aaee3b"
+      },
+      {
+        "view": 1,
+        "filtered": true,
+        "splats": 8820,
+        "file": "view-1-filtered.png",
+        "nonblack_fraction": 0.149008,
+        "sha256": "707e32904c4ac851c44adf68c44f095cef112c3e4884cdfd889b2b3434995dde"
+      },
+      {
+        "view": 2,
+        "filtered": false,
+        "splats": 9020,
+        "file": "view-2-raw.png",
+        "nonblack_fraction": 0.172723,
+        "sha256": "590414327d036b7859a425ec26e0b020109be9709fbe29d85d2c682089f2a500"
+      },
+      {
+        "view": 2,
+        "filtered": true,
+        "splats": 8820,
+        "file": "view-2-filtered.png",
+        "nonblack_fraction": 0.172703,
+        "sha256": "8a5a544e4671df8ba1a58b506853ef07357806d84b5eb0a08867b5cc9caca579"
+      }
+    ],
+    "exit_code": 0
+  },
+  "visual_inspection": "Three poses, both models and debug points inspected; object visible and orientation consistent.",
+  "limits": [
+    "Public synthetic data, no personal capture or COLMAP.",
+    "Validation used for monitoring; no final independent benchmark.",
+    "Brush metrics are not Unity rendering metrics.",
+    "Filtering is not demonstrated to improve image quality.",
+    "No FPS, VR or mobile test.",
+    "Editor importer reported two persistent allocations at exit; unresolved."
+  ]
+}

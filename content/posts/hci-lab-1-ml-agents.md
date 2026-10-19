@@ -1,7 +1,7 @@
 +++
-title = "HCI Lab 1: Learning to Reach and Chase"
+title = "HCI Lab 1: Machine Learning in Unity with ML-Agents"
 date = 2026-10-12
-lastmod = 2026-10-17
+lastmod = 2026-10-19
 description = "Two PPO policies in Unity, checked against random actions in 100 independent trials per task."
 tags = ["HCI", "Unity", "ML-Agents", "reinforcement learning", "PPO"]
 categories = ["HCI"]
