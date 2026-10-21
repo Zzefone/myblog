@@ -1,0 +1,68 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-21T09:10:33.017849+00:00",
+  "finished_utc": "2026-10-21T09:11:45.700834+00:00",
+  "pycolmap_version": "4.2.1",
+  "device": "CPU",
+  "input_images": 100,
+  "resolution": [
+    800,
+    800
+  ],
+  "seed": 20261021,
+  "focal_prior_pixels": 1111.1110311937682,
+  "camera_extrinsics_supplied": false,
+  "validation_images_used": false,
+  "exhaustive_candidate_pairs": 4950,
+  "extracted_keypoints": 124205,
+  "matched_pairs_with_matches": 2156,
+  "verified_pairs_at_least_15_inliers": 2010,
+  "models": [
+    {
+      "id": 0,
+      "registered_images": 96,
+      "points": 8425
+    }
+  ],
+  "selected_model": 0,
+  "registered_images": 96,
+  "sparse_points": 8425,
+  "mean_reprojection_error_pixels": 0.5287813740419072,
+  "mean_track_length": 9.011394658753709,
+  "mean_observations_per_registered_image": 790.84375,
+  "timing": {
+    "extraction_seconds": 6.079150200000186,
+    "matching_seconds": 25.179313900000125,
+    "mapping_seconds": 35.21755190000022,
+    "total_seconds": 72.68065100000013
+  },
+  "used_to_retrain_brush": false,
+  "scope": "Separate SfM addition on original training images; previous Brush/Unity results unchanged.",
+  "outputs": [
+    {
+      "file": "sparse/0/cameras.bin",
+      "bytes": 56,
+      "sha256": "21ae52074e68c24e1a4b0ea647e38a7f8fc338f55df0b38844a3aa20622d0fda"
+    },
+    {
+      "file": "sparse/0/frames.bin",
+      "bytes": 8072,
+      "sha256": "ed64d510e63a8f58e00d73aa43f3fbd61e9561da55c64c4829b0a1f3e5f7e4cd"
+    },
+    {
+      "file": "sparse/0/images.bin",
+      "bytes": 2951302,
+      "sha256": "d65d3a2cb698d47b4285835e3c588baa1897fd320aebb23970f5d0014349757c"
+    },
+    {
+      "file": "sparse/0/points3D.bin",
+      "bytes": 1037051,
+      "sha256": "9879e8d1190b4f64baf7cd0ef85d8028fa44ec598494f1a1636e12862a5ab0e2"
+    },
+    {
+      "file": "sparse/0/rigs.bin",
+      "bytes": 24,
+      "sha256": "73e4d5f0da0a84a5711b46ae716a149f1532832f95bb09b4b01e73cf2c5afbe9"
+    }
+  ]
+}
