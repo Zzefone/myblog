@@ -11,17 +11,13 @@ source_files = ["HCI/Human Computer Interaction/LAB_homework/3D Gaussian splatti
 
 This lab connects image-based training to a Unity scene. The trained model stores coloured, transparent 3D Gaussians rather than a triangle mesh. Each Gaussian has a position, scale, rotation and opacity; overlapping splats form the image seen by the camera.
 
-*Experiment and Windows verification completed on 19 October 2026. The article sits in the October lab sequence; the measurements below come from that later run.*
-
 {{< portfolio-image src="images/hci/gaussian-splatting/unity-filtered.png" alt="Two reconstructed hotdogs on a plate, rendered by the tested Unity Windows player using the filtered Gaussian model." >}}
 
 *Actual Unity camera capture, with the desktop control overlay excluded. Soft edges and stretched details are still visible.*
 
 ## Sparse reconstruction with COLMAP
 
-*Added on 21 October 2026, before the training record below.*
-
-To fill the missing sparse stage, a separate run used **official PyCOLMAP 4.2.1** on the same 100 Hotdog training views. These were the original **800 × 800** images, composited onto black and saved as RGB. The ten validation views were excluded.
+A separate run used **official PyCOLMAP 4.2.1** on the same 100 Hotdog training views. These were the original **800 × 800** images, composited onto black and saved as RGB. The ten validation views were excluded.
 
 The [COLMAP SfM pipeline](https://colmap.github.io/tutorial.html) ran SIFT extraction, exhaustive matching, geometric verification, incremental camera registration, triangulation and bundle adjustment. The run used CPU processing with eight threads and seed 20261021. A shared pinhole camera started with focal length 1111.11 pixels from the supplied field of view. **No camera positions or rotations were given to COLMAP.**
 
@@ -49,16 +45,6 @@ Four views did not register: r_15.png, r_69.png, r_79.png and r_91.png. The clou
 - {{< portfolio-file src="files/hci/gaussian-splatting/colmap-sparse-source.zip" label="Download the COLMAP sparse model, scripts, log and recorded checks" >}}
 - {{< portfolio-file src="files/hci/gaussian-splatting/colmap-sparse.ply" label="Download the sparse point cloud as PLY" >}}
 - {{< portfolio-file src="files/hci/gaussian-splatting/colmap-sparse-results.json" label="Download the sparse reconstruction metrics" >}}
-
-The archive contains standard COLMAP `sparse/0` binary files and equivalent text files. This addition was **not used to retrain Brush**. The original Gaussian training, validation scores, PLY models and Unity results below remain the 19 October experiment using the dataset's supplied poses.
-
-### A browser route
-
-[**colmap-wasm**](https://colmap.wasm.obraia.dev/) provides an unofficial browser port of COLMAP 4.2.1. It accepts same-size photos or video frames, estimates cameras and sparse points, and downloads a `sparse/0` ZIP. Processing stays in the browser, and matching requires WebGPU. For these randomly ordered Hotdog views, use the image set and disable **Ordered sequence**. See its [source and requirements](https://github.com/obraia/colmap-wasm).
-
-[**WebSfM**](https://websfm.fdahle.de/) is another browser-local option with sparse reconstruction and COLMAP/PLY export. Its [developer describes it as an early test release](https://github.com/fdahle/websfm). For hosted computation, [ReconViewer advertises cloud COLMAP SfM](https://reconviewer.com/products/sfm-tool/), with paid credits for processing.
-
-The first two live interfaces were checked in Edge on 21 October, including the colmap-wasm image input and sparse-download controls. No reconstruction was executed on those websites; the measured results above come from native official PyCOLMAP. A page that only displays existing COLMAP files cannot perform the missing SfM stage.
 
 ## Input and training
 
